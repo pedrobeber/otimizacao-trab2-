@@ -1,9 +1,11 @@
 # otimizacao-trab2-
-Assignment 2 for Optimization (BCC, UFPR): a **branch-and-bound** solver in Python (`trab2.py`) for a combinatorial selection problem — choose the smallest number of items whose sets cover the required elements.
+Second assignment of CI1238 Optimization (UFPR): solve the **"Comissão Representativa"** (representative committee) problem with **Branch & Bound**.
 
-The search includes a bounding function and pruning by optimality and by feasibility. Command-line flags:
-- `-a` use the default (simple) bounding function
-- `-o` disable optimality cuts
+**Problem.** Given a set of groups *S* and candidates *C*, where each candidate belongs to some groups, pick the smallest set of candidates so that every group is represented (a minimum set cover). If no selection covers all groups the program prints `Inviavel`.
+
+**Implementation (`trab2.py`).** Branch & Bound over include/exclude decisions for each candidate, with feasibility cuts, optimality cuts and a bounding function. Command-line options:
+- `-a` use the bounding function given by the professor (|E| + 1 while some group is uncovered); by default a tighter bound of my own is used
 - `-f` disable feasibility cuts
+- `-o` disable optimality cuts
 
-`entradas_avaliadas/` contains the evaluated input instances and sample outputs.
+Input is read from `stdin` (|S| and |C|, then one block per candidate listing its groups) and the chosen candidates are printed in ascending order. `entradas_avaliadas/` has the instances used to compare the bounding functions (tree nodes and time).

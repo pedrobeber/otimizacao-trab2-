@@ -8,4 +8,4 @@ Second assignment of CI1238 Optimization (UFPR): solve the **"Comissão Represen
 - `-f` disable feasibility cuts
 - `-o` disable optimality cuts
 
-Input is read from `stdin` (|S| and |C|, then one block per candidate listing its groups) and the chosen candidates are printed in ascending order. `entradas_avaliadas/` has the instances used to compare the bounding functions (tree nodes and time).
+Input is read from `stdin` (|S| and |C|, then one block per candidate listing its groups) and the chosen candidates are printed in ascending order, after a short report with the elapsed time and the number of tree nodes explored. `entradas_avaliadas/` has the instances used to compare the bounding functions (tree nodes and time).
